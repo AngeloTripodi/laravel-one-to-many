@@ -8,7 +8,8 @@
 
         <div class="card mt-5">
             <div class="card-header">
-                {{ $project->project_date }}
+                Project date: {{ $project->project_date }}
+                <div>Type: {{ $project->type->name }}</div>
             </div>
             <div class="card-body bg-black text-light">
                 <h2 class="card-author">{{ $project->author }}</h2>

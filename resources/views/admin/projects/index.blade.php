@@ -19,6 +19,7 @@
                     <th scope="col">Projects Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Languages used:</th>
+                    <th scope="col">Type:</th>
                     {{-- <th scope="col">Project description:</th> --}}
                     <th scope="col">Project date:</th>
                     <th scope="col">Actions:</th>
@@ -33,11 +34,13 @@
                         <td>{{ $project->title }}</td>
                         <td>{{ $project->author }}</td>
                         <td>{{ $project->languages_used }}</td>
+                        <td> {{ $project->type->name }}</td>
                         {{-- <td>{{ $project->content }}</td> --}}
                         <td>{{ $project->project_date }}</td>
                         <td>
                             <a class="btn btn-sm btn-light" href="{{ route('admin.projects.show', $project->id) }}">Show</a>
-                            <a class="btn btn-sm btn-light" href="{{ route('admin.projects.edit', $project->id) }}">Edit</a>
+                            <a class="btn btn-sm btn-light"
+                                href="{{ route('admin.projects.edit', $project->id) }}">Edit</a>
                             <form class="d-inline-block popupDel" data-element-name="{{ $project->title }}"
                                 action="{{ route('admin.projects.destroy', $project->id) }}" method="POST">
                                 @csrf
